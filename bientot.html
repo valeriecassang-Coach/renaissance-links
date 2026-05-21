@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bientôt disponible · RENAISSANCE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --or:        #b8956a;
+    --beige:     #faf7f3;
+    --beige-2:   #f2ece3;
+    --brun:      #2c2420;
+    --brun-mid:  #5a4035;
+    --brun-soft: #8a7060;
+    --gris:      #ddd4ca;
+    --serif:     'Playfair Display', Georgia, serif;
+    --sans:      'Lato', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    background-color: var(--beige);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    font-family: var(--sans);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  .card {
+    max-width: 380px;
+    width: 100%;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── ORNEMENT ─────────────────────────────────────── */
+  .ornement {
+    margin: 0 auto 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ornement-ligne {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, transparent, var(--or));
+  }
+
+  .ornement-losange {
+    width: 8px;
+    height: 8px;
+    background: var(--or);
+    transform: rotate(45deg);
+  }
+
+  /* ── BRAND ────────────────────────────────────────── */
+  .brand {
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 24px;
+  }
+
+  /* ── TITRE PRINCIPAL ──────────────────────────────── */
+  .titre {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--brun);
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .titre em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--brun-mid);
+  }
+
+  /* ── FILET OR ─────────────────────────────────────── */
+  .filet {
+    width: 40px;
+    height: 1px;
+    background: var(--or);
+    margin: 24px auto;
+  }
+
+  /* ── SOUS-TITRE ───────────────────────────────────── */
+  .sous-titre {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--brun-mid);
+    line-height: 1.75;
+    margin-bottom: 36px;
+  }
+
+  /* ── MESSAGE ──────────────────────────────────────── */
+  .message {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--brun-soft);
+    line-height: 1.8;
+    border: 0.5px solid var(--gris);
+    padding: 20px 24px;
+    background: white;
+    margin-bottom: 32px;
+  }
+
+  /* ── RETOUR ───────────────────────────────────────── */
+  .retour {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--sans);
+    font-size: 11.5px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    color: var(--brun-soft);
+    text-decoration: none;
+    border-bottom: 0.5px solid var(--gris);
+    padding-bottom: 3px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .retour:hover { color: var(--or); border-color: var(--or); }
+
+  /* ── ORNEMENT BAS ─────────────────────────────────── */
+  .ornement-bas {
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .ornement-bas .ornement-losange {
+    opacity: 0.4;
+  }
+  .ornement-bas .ornement-ligne {
+    background: linear-gradient(to top, transparent, var(--or));
+    opacity: 0.5;
+  }
+
+  /* ── FOOTER ───────────────────────────────────────── */
+  .footer {
+    margin-top: 32px;
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--brun-soft);
+    opacity: 0.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <div class="ornement">
+    <div class="ornement-ligne"></div>
+    <div class="ornement-losange"></div>
+  </div>
+
+  <div class="brand">Renaissance · Lettres</div>
+
+  <div class="titre">
+    Bientôt<br><em>disponible</em>
+  </div>
+
+  <div class="filet"></div>
+
+  <div class="sous-titre">
+    Les Lettres RENAISSANCE arrivent.<br>
+    Une lettre par semaine, rien que pour toi.
+  </div>
+
+  <div class="message">
+    Je prépare quelque chose d'intime et d'honnête —<br>
+    des lettres sur le corps, la confiance,<br>
+    la reconstruction après 45 ans.<br><br>
+    Pas du contenu. Une vraie conversation.
+  </div>
+
+  <a href="index.html" class="retour">← Retour</a>
+
+  <div class="ornement-bas">
+    <div class="ornement-losange"></div>
+    <div class="ornement-ligne"></div>
+  </div>
+
+  <div class="footer">Renaissance · 2025</div>
+
+</div>
+
+</body>
+</html>
