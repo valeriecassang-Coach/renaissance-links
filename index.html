@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Valérie · Coach RENAISSANCE — Retrouver énergie, force et confiance après 45 ans.">
+<title>Valérie · RENAISSANCE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --or:        #b8956a;
+    --or-hover:  #9a7a54;
+    --beige:     #faf7f3;
+    --beige-2:   #f2ece3;
+    --brun:      #2c2420;
+    --brun-mid:  #5a4035;
+    --brun-soft: #8a7060;
+    --gris:      #ddd4ca;
+    --blanc:     #ffffff;
+    --serif:     'Playfair Display', Georgia, serif;
+    --sans:      'Lato', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--beige);
+    font-family: var(--sans);
+    color: var(--brun);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 20px 64px;
+    /* texture grain subtile */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  /* ── CONTENEUR PRINCIPAL ─────────────────────────────── */
+  .container {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeUp 0.7s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── EN-TÊTE ──────────────────────────────────────────── */
+  .header { text-align: center; margin-bottom: 36px; }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--beige-2);
+    border: 1.5px solid var(--or);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+    font-family: var(--serif);
+    font-size: 26px;
+    color: var(--or);
+    letter-spacing: 1px;
+  }
+
+  .brand {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 8px;
+  }
+
+  .name {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--brun);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .tagline {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14.5px;
+    color: var(--brun-mid);
+    line-height: 1.65;
+    max-width: 300px;
+    margin: 0 auto 18px;
+  }
+
+  .filet {
+    width: 36px;
+    height: 1px;
+    background: var(--or);
+    margin: 0 auto;
+  }
+
+  /* ── SECTION LABEL ───────────────────────────────────── */
+  .section-label {
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--brun-soft);
+    margin: 28px 0 14px;
+    align-self: flex-start;
+    padding-left: 2px;
+  }
+
+  /* ── LIENS ───────────────────────────────────────────── */
+  .links { width: 100%; display: flex; flex-direction: column; gap: 10px; }
+
+  .link-card {
+    width: 100%;
+    background: var(--blanc);
+    border: 0.5px solid var(--gris);
+    border-radius: 3px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .link-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--or);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.2s ease;
+  }
+
+  .link-card:hover {
+    border-color: var(--or);
+    background: var(--beige);
+    transform: translateY(-1px);
+  }
+  .link-card:hover::before { transform: scaleY(1); }
+
+  .link-card.featured {
+    background: var(--beige-2);
+    border-color: var(--or);
+  }
+  .link-card.featured::before { transform: scaleY(1); }
+
+  .link-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--beige-2);
+    border: 0.5px solid var(--gris);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 16px;
+  }
+  .link-card.featured .link-icon {
+    background: var(--or);
+    border-color: var(--or);
+    color: var(--blanc);
+  }
+
+  .link-content { flex: 1; }
+
+  .link-badge {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--or);
+    font-family: var(--sans);
+    margin-bottom: 2px;
+    display: block;
+  }
+
+  .link-title {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--brun);
+    line-height: 1.3;
+    margin-bottom: 2px;
+  }
+
+  .link-sub {
+    font-family: var(--sans);
+    font-size: 11.5px;
+    font-weight: 300;
+    color: var(--brun-soft);
+    line-height: 1.4;
+  }
+
+  .link-arrow {
+    font-size: 14px;
+    color: var(--or);
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .link-card:hover .link-arrow { transform: translateX(3px); }
+
+  /* ── SÉPARATEUR ─────────────────────────────────────── */
+  .sep {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin: 8px 0;
+  }
+  .sep-line { flex: 1; height: 0.5px; background: var(--gris); }
+  .sep-text {
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--brun-soft);
+  }
+
+  /* ── INSTAGRAM PILL ─────────────────────────────────── */
+  .insta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 32px;
+    padding: 10px 22px;
+    border: 0.5px solid var(--gris);
+    border-radius: 100px;
+    text-decoration: none;
+    color: var(--brun-soft);
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .insta-pill:hover { border-color: var(--or); color: var(--or); }
+  .insta-pill svg { width: 15px; height: 15px; }
+
+  /* ── FOOTER ──────────────────────────────────────────── */
+  .footer {
+    margin-top: 40px;
+    text-align: center;
+  }
+  .footer-brand {
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--brun-soft);
+    margin-bottom: 6px;
+  }
+  .footer-copy {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--brun-soft);
+  }
+
+  /* ── RESPONSIVE ─────────────────────────────────────── */
+  @media (max-width: 380px) {
+    body { padding: 36px 16px 56px; }
+    .name { font-size: 22px; }
+    .link-card { padding: 14px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- EN-TÊTE -->
+  <div class="header">
+    <div class="avatar">V</div>
+    <div class="brand">Renaissance · Coach</div>
+    <div class="name">Valérie</div>
+    <div class="tagline">Retrouver énergie, force<br>et confiance après 45 ans.</div>
+    <div class="filet"></div>
+  </div>
+
+  <!-- LIENS PRINCIPAUX -->
+  <div class="section-label">Pour commencer</div>
+  <div class="links">
+
+    <!-- GUIDE GRATUIT — mis en avant -->
+    <a href="LIEN_VERS_TA_PAGE_OPTIN" class="link-card featured" target="_blank" rel="noopener">
+      <div class="link-icon">✦</div>
+      <div class="link-content">
+        <span class="link-badge">Gratuit</span>
+        <div class="link-title">Guide — Ce que personne ne t'a dit sur ton corps après 45 ans</div>
+        <div class="link-sub">PDF offert · Téléchargement immédiat</div>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+
+    <!-- LETTRES RENAISSANCE -->
+    <a href="LIEN_VERS_TA_NEWSLETTER" class="link-card" target="_blank" rel="noopener">
+      <div class="link-icon">✉</div>
+      <div class="link-content">
+        <span class="link-badge">Chaque semaine</span>
+        <div class="link-title">Les Lettres RENAISSANCE</div>
+        <div class="link-sub">Intime · Honnête · Pour toi</div>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+
+  </div>
+
+  <div class="sep">
+    <div class="sep-line"></div>
+    <div class="sep-text">Aller plus loin</div>
+    <div class="sep-line"></div>
+  </div>
+
+  <div class="links">
+
+    <!-- APPLICATION -->
+    <a href="LIEN_VERS_TON_APP" class="link-card" target="_blank" rel="noopener">
+      <div class="link-icon">⬡</div>
+      <div class="link-content">
+        <span class="link-badge">Application</span>
+        <div class="link-title">Programme RENAISSANCE</div>
+        <div class="link-sub">Suivi personnalisé · Séances · Ressources</div>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+
+    <!-- PROGRAMME VIP -->
+    <a href="LIEN_VERS_TON_PROGRAMME" class="link-card" target="_blank" rel="noopener">
+      <div class="link-icon">◈</div>
+      <div class="link-content">
+        <span class="link-badge">Coaching VIP</span>
+        <div class="link-title">Accompagnement Individuel</div>
+        <div class="link-sub">Programme sur-mesure · Places limitées</div>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+
+    <!-- CONTACT -->
+    <a href="mailto:valeriecoaching33@gmail.com" class="link-card">
+      <div class="link-icon">○</div>
+      <div class="link-content">
+        <span class="link-badge">Me contacter</span>
+        <div class="link-title">Une question ? Écris-moi.</div>
+        <div class="link-sub">valeriecoaching33@gmail.com</div>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+
+  </div>
+
+  <!-- INSTAGRAM -->
+  <a href="https://instagram.com/TON_COMPTE_INSTAGRAM" class="insta-pill" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+    </svg>
+    @TON_COMPTE_INSTAGRAM
+  </a>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-brand">Renaissance · 2025</div>
+    <div class="footer-copy">Coaching féminin · 45 ans et plus</div>
+  </div>
+
+</div>
+
+</body>
+</html>
