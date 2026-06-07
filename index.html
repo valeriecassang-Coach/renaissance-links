@@ -323,7 +323,7 @@
         corps.innerHTML =
           '<div class="pr-titre">Vérifie ta boîte mail</div>'
           + '<div class="pr-filet"></div>'
-          + '<div class="pr-sub">Ton guide vient de partir par email. Pense à regarder dans tes spams si tu ne le vois pas tout de suite.</div>';
+          + '<div class="pr-sub">Ton guide vient de partir par email. Si tu ne le vois pas tout de suite, regarde dans tes <strong>spams</strong> ou l\'onglet <strong>Promotions</strong> de ta boîte mail.</div>';
       })
       .catch(function (err) {
         erreur.textContent = err.message || 'Une erreur est survenue. Réessaie.';
@@ -331,6 +331,17 @@
         btn.disabled = false; btn.textContent = 'Recevoir mon guide';
       });
   });
+
+  // Ouverture automatique de la popup via un lien direct : ?guide=ID
+  // Ex (à mettre sur Instagram) :
+  //   https://renaissance-links.vercel.app/?guide=corps-45-ans
+  //   https://renaissance-links.vercel.app/?guide=nutrition-perimenopause
+  var params = new URLSearchParams(window.location.search);
+  var gid = params.get('guide');
+  if (gid) {
+    var trigger = document.querySelector('.ouvrir-popup-renaissance[data-guide-id="' + gid + '"]');
+    ouvrir(gid, trigger ? trigger.getAttribute('data-titre') : null);
+  }
 })();
 </script>
 </body>
