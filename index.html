@@ -159,6 +159,21 @@
     .name { font-size: 22px; }
     .link-card { padding: 14px 16px; }
   }
+
+  /* ===== Popup capture email RENAISSANCE ===== */
+  #popup-renaissance { display:none; position:fixed; inset:0; background:rgba(44,36,32,.55); align-items:center; justify-content:center; padding:16px; z-index:9999; }
+  .pr-boite { background:var(--blanc); border-radius:4px; max-width:400px; width:100%; padding:34px; box-shadow:0 12px 50px rgba(44,36,32,.3); position:relative; animation:fadeUp .35s ease both; }
+  .pr-fermer { position:absolute; top:12px; right:16px; background:none; border:none; font-size:24px; color:var(--brun-soft); cursor:pointer; line-height:1; }
+  .pr-brand { text-align:center; font-family:var(--sans); font-size:10px; letter-spacing:5px; text-transform:uppercase; color:var(--or); }
+  .pr-titre { text-align:center; font-family:var(--serif); font-size:20px; font-weight:600; color:var(--brun); margin:12px 0 4px; line-height:1.3; }
+  .pr-filet { width:36px; height:1px; background:var(--or); margin:14px auto 18px; }
+  .pr-sub { text-align:center; font-family:var(--sans); font-size:12.5px; font-weight:300; color:var(--brun-soft); margin-bottom:18px; }
+  .pr-champ { width:100%; padding:12px 14px; font-size:14px; font-family:var(--sans); color:var(--brun); background:var(--beige); border:0.5px solid var(--gris); border-radius:3px; margin-bottom:11px; }
+  .pr-champ:focus { outline:none; border-color:var(--or); }
+  .pr-bouton { width:100%; padding:13px; background:var(--or); color:var(--blanc); border:none; border-radius:3px; font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; cursor:pointer; transition:background .2s; }
+  .pr-bouton:hover { background:#a07f55; }
+  .pr-consent { display:flex; align-items:flex-start; gap:8px; font-family:var(--sans); font-size:11px; font-weight:300; color:var(--brun-soft); margin:2px 0 16px; line-height:1.5; text-align:left; }
+  .pr-erreur { display:none; background:#f3e3df; color:#b8665c; padding:9px 12px; border-radius:3px; font-size:12px; margin-bottom:11px; }
 </style>
 </head>
 <body>
@@ -175,26 +190,26 @@
   <div class="section-label">Pour commencer</div>
   <div class="links">
 
-    <a href="https://preview.mailerlite.io/forms/2368261/188114403206366320/share" class="link-card featured" target="_blank" rel="noopener">
+    <a href="#" class="link-card featured ouvrir-popup-renaissance" data-guide-id="corps-45-ans" data-titre="Ce que personne ne t'a dit sur ton corps après 45 ans">
       <div class="link-icon">✦</div>
       <div class="link-content">
         <span class="link-badge">Gratuit</span>
         <div class="link-title">Guide — Ce que personne ne t'a dit sur ton corps après 45 ans</div>
-        <div class="link-sub">PDF offert · Téléchargement immédiat</div>
+        <div class="link-sub">PDF offert · Reçois-le par email</div>
       </div>
       <div class="link-arrow">→</div>
     </a>
 
- <a href="https://preview.mailerlite.io/forms/2368261/189277481558082746/share" class="link-card featured" target="_blank" rel="noopener">
+    <a href="#" class="link-card featured ouvrir-popup-renaissance" data-guide-id="nutrition-perimenopause" data-titre="Nutrition Périménopause">
       <div class="link-icon">✦</div>
       <div class="link-content">
         <span class="link-badge">Gratuit</span>
         <div class="link-title">Guide — Nutrition Périménopause</div>
-        <div class="link-sub">PDF offert · Téléchargement immédiat</div>
+        <div class="link-sub">PDF offert · Reçois-le par email</div>
       </div>
       <div class="link-arrow">→</div>
     </a>
-   
+
     <a href="bientot.html" class="link-card">
       <div class="link-icon">✉</div>
       <div class="link-content">
@@ -232,5 +247,91 @@
   </div>
 
 </div>
+
+<!-- ===== Popup capture email (branchée sur l'outil mailing RENAISSANCE) ===== -->
+<div id="popup-renaissance">
+  <div class="pr-boite">
+    <button class="pr-fermer" id="pr-fermer" aria-label="Fermer">×</button>
+    <div class="pr-brand">Renaissance</div>
+    <div id="pr-corps">
+      <div class="pr-titre" id="pr-titre">Reçois ton guide offert</div>
+      <div class="pr-filet"></div>
+      <div class="pr-sub">Laisse-moi ton email, je t'envoie le guide tout de suite.</div>
+      <div class="pr-erreur" id="pr-erreur"></div>
+      <form id="pr-form">
+        <input class="pr-champ" id="pr-prenom" type="text" placeholder="Ton prénom (facultatif)">
+        <input class="pr-champ" id="pr-email" type="email" required placeholder="Ton adresse email">
+        <label class="pr-consent">
+          <input id="pr-consent" type="checkbox" style="margin-top:2px;">
+          <span>J'accepte de recevoir le guide et les emails de RENAISSANCE. Je peux me désabonner à tout moment.</span>
+        </label>
+        <button class="pr-bouton" id="pr-submit" type="submit">Recevoir mon guide</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var URL_SUBSCRIBE = 'https://europe-west1-renaissance-6fd77.cloudfunctions.net/subscribe';
+  var popup = document.getElementById('popup-renaissance');
+  var corps = document.getElementById('pr-corps');
+  var erreur = document.getElementById('pr-erreur');
+  var form = document.getElementById('pr-form');
+  var guideCourant = null;
+
+  function ouvrir(guideId, titre) {
+    guideCourant = guideId;
+    document.getElementById('pr-titre').textContent = titre || 'Reçois ton guide offert';
+    erreur.style.display = 'none';
+    popup.style.display = 'flex';
+  }
+  function fermer() { popup.style.display = 'none'; }
+
+  document.querySelectorAll('.ouvrir-popup-renaissance').forEach(function (b) {
+    b.addEventListener('click', function (e) {
+      e.preventDefault();
+      ouvrir(b.getAttribute('data-guide-id'), b.getAttribute('data-titre'));
+    });
+  });
+  document.getElementById('pr-fermer').addEventListener('click', fermer);
+  popup.addEventListener('click', function (e) { if (e.target === popup) fermer(); });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    erreur.style.display = 'none';
+    if (!document.getElementById('pr-consent').checked) {
+      erreur.textContent = 'Merci de cocher la case de consentement.';
+      erreur.style.display = 'block';
+      return;
+    }
+    var btn = document.getElementById('pr-submit');
+    btn.disabled = true; btn.textContent = 'Envoi…';
+    fetch(URL_SUBSCRIBE, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: document.getElementById('pr-email').value,
+        prenom: document.getElementById('pr-prenom').value,
+        guideId: guideCourant,
+        consentement: true
+      })
+    })
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+      .then(function (res) {
+        if (!res.ok || !res.d.ok) throw new Error(res.d.message || 'Erreur');
+        corps.innerHTML =
+          '<div class="pr-titre">Vérifie ta boîte mail</div>'
+          + '<div class="pr-filet"></div>'
+          + '<div class="pr-sub">Ton guide vient de partir par email. Pense à regarder dans tes spams si tu ne le vois pas tout de suite.</div>';
+      })
+      .catch(function (err) {
+        erreur.textContent = err.message || 'Une erreur est survenue. Réessaie.';
+        erreur.style.display = 'block';
+        btn.disabled = false; btn.textContent = 'Recevoir mon guide';
+      });
+  });
+})();
+</script>
 </body>
 </html>
