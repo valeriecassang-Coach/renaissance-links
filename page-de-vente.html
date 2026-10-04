@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="La femme que tu étais n'a pas disparu. Elle t'attend. Coaching RENAISSANCE pour les femmes 40+ en péri-ménopause.">
+<title>La femme que tu étais · Valérie · RENAISSANCE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --or:         #b8956a;
+    --or-fonce:   #8a6b4a;
+    --or-pale:    #c8b59a;
+    --brun:       #3d2f22;
+    --texte:      #5a4f47;
+    --rouge:      #a63d40;
+    --fond-haut:  #f3ece1;
+    --fond-bas:   #e9dfcf;
+    --serif:      'Playfair Display', Georgia, serif;
+    --sans:       'Lato', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  body {
+    background: linear-gradient(175deg, var(--fond-haut) 0%, var(--fond-bas) 100%);
+    background-color: var(--fond-haut);
+    min-height: 100vh;
+    font-family: var(--sans);
+    color: var(--texte);
+    padding: 28px 20px 56px;
+  }
+
+  .page {
+    max-width: 460px;
+    margin: 0 auto;
+    animation: fadeUp 0.7s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .retour {
+    display: inline-block;
+    font-family: var(--sans); font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--or-fonce); text-decoration: none; opacity: 0.8;
+    margin-bottom: 28px;
+    transition: opacity 0.2s;
+  }
+  .retour:hover { opacity: 1; }
+
+  /* ===== En-tête ===== */
+  .entete { text-align: center; margin-bottom: 30px; }
+  .marque { font-family: var(--serif); font-style: italic; font-size: 27px; color: var(--or-fonce); letter-spacing: 1px; }
+  .coach { font-family: var(--sans); font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--or); margin-top: 8px; }
+  .filet { width: 55px; height: 1px; background: var(--or); margin: 22px auto 0; }
+
+  h1 {
+    font-family: var(--serif); font-style: italic; font-weight: 700;
+    font-size: clamp(26px, 8vw, 32px); line-height: 1.25;
+    color: var(--brun); text-align: center;
+    margin-bottom: 26px;
+  }
+
+  /* ===== Texte ===== */
+  p { font-size: 16.5px; font-weight: 300; line-height: 1.72; margin-bottom: 13px; }
+  strong { font-weight: 700; color: var(--or-fonce); }
+
+  .intro { font-size: 17px; text-align: center; }
+  .intro-chute {
+    font-family: var(--serif); font-style: italic;
+    font-size: 19px; line-height: 1.4; text-align: center;
+    color: var(--or-fonce); margin: 18px 0 0;
+  }
+
+  h2.titre-section {
+    font-family: var(--serif); font-style: italic; font-weight: 400;
+    font-size: 23px; line-height: 1.35; text-align: center;
+    color: var(--brun);
+    margin: 44px 0 26px;
+  }
+  h2.titre-section::after {
+    content: ''; display: block;
+    width: 35px; height: 1px; background: var(--or);
+    margin: 12px auto 0;
+  }
+
+  /* ===== Objections ===== */
+  .objection {
+    font-family: var(--serif); font-style: italic;
+    font-size: 18.5px; line-height: 1.4; color: var(--rouge);
+    margin: 26px 0 10px;
+  }
+  .objection:first-of-type { margin-top: 0; }
+  .reponse { font-size: 16px; line-height: 1.68; }
+
+  /* ===== Encadré « Imagine » ===== */
+  .imagine {
+    margin-top: 40px;
+    padding: 6px 26px 30px;
+    border-radius: 14px;
+    background: rgba(121, 138, 91, 0.08);
+  }
+  .imagine h2.titre-section { color: var(--or-fonce); margin-top: 26px; }
+  .imagine-chute {
+    font-family: var(--serif); font-style: italic;
+    font-size: 18.5px; line-height: 1.5; text-align: center;
+    color: var(--or-fonce); margin: 22px 0 0;
+  }
+
+  /* ===== Liste « Tu auras » ===== */
+  .atouts { list-style: none; margin: 20px 0 10px; }
+  .atouts li {
+    display: flex; align-items: baseline; gap: 14px;
+    padding: 14px 0 14px 6px;
+    font-size: 16px; font-weight: 400; line-height: 1.5; color: var(--brun);
+    border-bottom: 1px solid rgba(184, 149, 106, 0.22);
+  }
+  .atouts li:last-child { border-bottom: none; }
+  .etoile { color: var(--or); font-size: 15px; flex-shrink: 0; }
+
+  .chute {
+    font-family: var(--serif); font-style: italic;
+    font-size: 16.5px; line-height: 1.7; text-align: center;
+    color: var(--texte); margin: 26px 0 0;
+  }
+
+  /* ===== Encadré contact ===== */
+  .encadre {
+    margin-top: 40px;
+    padding: 34px 28px 30px;
+    border: 1px solid var(--or);
+    border-radius: 14px;
+    background: rgba(184, 149, 106, 0.10);
+    text-align: center;
+  }
+  .encadre h2 {
+    font-family: var(--serif); font-style: italic; font-weight: 400;
+    font-size: 27px; color: var(--brun); margin-bottom: 16px;
+  }
+  .encadre p { font-size: 16px; line-height: 1.65; }
+  .encadre .phrase-fin {
+    font-family: var(--serif); font-style: italic;
+    font-size: 18px; line-height: 1.45; color: var(--or-fonce);
+    margin: 16px 0 0;
+  }
+
+  /* ===== Signature ===== */
+  .signature { text-align: center; margin-top: 36px; }
+  .signature .nom { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--or-fonce); }
+  .signature .etoile-fin { color: var(--or); font-size: 17px; margin-top: 14px; }
+  .retour-bas { display: block; text-align: center; margin: 30px 0 0; }
+
+  @media (max-width: 380px) {
+    body { padding: 22px 16px 48px; }
+    p { font-size: 16px; }
+    .imagine { padding: 4px 20px 26px; }
+    .encadre { padding: 28px 20px 24px; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <a href="/" class="retour">← Retour</a>
+
+  <header class="entete">
+    <div class="marque">Renaissance</div>
+    <div class="coach">Coach Valérie Defolie</div>
+    <div class="filet"></div>
+  </header>
+
+  <h1>La femme que tu étais<br>n'a pas disparu.<br>Elle t'attend.</h1>
+
+  <p class="intro">Tu te souviens de cette femme pleine d'énergie&nbsp;? Celle qui ne réfléchissait pas à deux fois avant de dire oui à une sortie, une randonnée, une nuit à danser&nbsp;?</p>
+  <p class="intro-chute">Elle est toujours là.<br>Elle attend juste que tu viennes la rechercher.</p>
+
+  <h2 class="titre-section">Ce que tu te dis</h2>
+
+  <p class="objection">«&nbsp;Je n'ai pas le temps.&nbsp;»</p>
+  <p class="reponse">Tu as le temps pour tout le monde — ton travail, tes enfants, ton conjoint, les imprévus. Pour tout, sauf toi. Le problème n'a jamais été le temps. C'est que tu es passée en dernier sur ta propre liste.</p>
+
+  <p class="objection">«&nbsp;C'est trop tard, à mon âge.&nbsp;»</p>
+  <p class="reponse">La péri-ménopause n'est pas une fin. C'est une <strong>transition</strong>. Un passage. Et comme tout passage, il se traverse — mieux ou moins bien, selon qui t'accompagne. Ton corps ne t'a pas trahie. Il a changé les règles du jeu, sans te donner la nouvelle notice. Moi, je l'ai.</p>
+
+  <p class="objection">«&nbsp;Le sport, ce n'est pas pour moi.&nbsp;»</p>
+  <p class="reponse">Parce qu'on t'a fait croire qu'il fallait souffrir, transpirer, t'épuiser. C'est faux. Chez moi, on ne punit pas ton corps. On le reconstruit. Et ça change absolument tout.</p>
+
+  <section class="imagine">
+    <h2 class="titre-section">Imagine dans quelques mois</h2>
+    <p>Tu te réveilles avec de l'énergie — la vraie, celle qui ne retombe pas à 15h.</p>
+    <p>Tu te regardes dans le miroir et tu te reconnais. Mieux&nbsp;: tu t'aimes.</p>
+    <p>Ton couple respire à nouveau, parce qu'une femme qui se sent bien dans son corps se sent bien partout — y compris dans sa vie amoureuse.</p>
+    <p>Tu gères ton travail, ta famille, les imprévus... sans finir vidée. Parce que tu as retrouvé un corps solide qui te porte, au lieu d'un corps qui te freine.</p>
+    <p class="imagine-chute">Ça, ce n'est pas un rêve.<br>C'est le quotidien des femmes que j'accompagne.</p>
+  </section>
+
+  <h2 class="titre-section">Pourquoi moi,<br>et pas un programme à télécharger</h2>
+
+  <p>Soyons honnêtes. Instagram déborde de «&nbsp;programmes minceur&nbsp;» à quelques euros, ficelés à la va-vite, les mêmes pour toutes, oubliés dans un dossier au bout de deux semaines.</p>
+  <p>Ce n'est pas ce que je fais. Et ce n'est pas ce que tu mérites.</p>
+  <p>Je suis <strong>préparatrice physique et coach sportive et nutrition depuis plus de 15 ans</strong>. J'ai eu ma propre salle, j'ai formé, accompagné, réparé des centaines de corps. Ce n'est pas un hobby ni un filon à la mode&nbsp;: c'est mon métier, ma vocation.</p>
+  <p>Et surtout&nbsp;: <strong>je vis exactement ce que tu vis.</strong> J'ai 49 ans. Je traverse cette même transition. La différence, c'est que je la traverse debout, pleine d'énergie et de joie de vivre — et ce n'est pas de la chance. C'est une méthode. Celle que je vais te transmettre.</p>
+  <p>Avec moi, tu n'auras pas un PDF générique. Tu auras&nbsp;:</p>
+
+  <ul class="atouts">
+    <li><span class="etoile">✦</span><span>Un accompagnement <strong>pensé pour TON corps</strong>, ton rythme, ta vie</span></li>
+    <li><span class="etoile">✦</span><span>Les <strong>4 piliers</strong> qui comptent vraiment&nbsp;: alimentation, sport, sommeil et stress, équilibre hormonal</span></li>
+    <li><span class="etoile">✦</span><span>Une coach <strong>à ton écoute</strong> — pas un chatbot, pas un fichier&nbsp;: une vraie présence</span></li>
+    <li><span class="etoile">✦</span><span>Une méthode qui <strong>reconstruit</strong> au lieu d'épuiser, qui <strong>nourrit</strong> au lieu de priver</span></li>
+  </ul>
+
+  <h2 class="titre-section">Le temps ne t'attendra pas</h2>
+
+  <p>Chaque mois qui passe sans rien faire, c'est un peu de muscle en moins, un peu de fatigue en plus, un peu de confiance qui s'efface.</p>
+  <p>Mais l'inverse est vrai aussi. Chaque mois où tu agis, c'est un corps qui se renforce, une énergie qui revient, une femme qui se retrouve.</p>
+  <p>Bien vieillir, se sentir vivante, profiter pleinement de sa vie et pas à demi-mesure&nbsp;: <strong>ça se décide. Aujourd'hui.</strong></p>
+
+  <p class="chute">La péri-ménopause n'est qu'un passage.<br>Et laisse-moi te montrer l'autre rive.</p>
+
+  <section class="encadre">
+    <h2>On commence&nbsp;?</h2>
+    <p>Si en lisant ces lignes, quelque chose a résonné en toi — cette petite voix qui dit «&nbsp;c'est peut-être pour moi&nbsp;» — écoute-la.</p>
+    <p>Contacte-moi en privé. On échangera 20 minutes, sans engagement. Juste toi et moi, pour voir où tu en es et comment je peux t'aider à retrouver ton énergie, ton corps, et ta joie de vivre.</p>
+    <p class="phrase-fin">Ta renaissance commence par une conversation.</p>
+  </section>
+
+  <div class="signature">
+    <div class="nom">Valérie</div>
+    <div class="etoile-fin">✦</div>
+  </div>
+
+  <a href="/" class="retour retour-bas">← Retour</a>
+
+</main>
+</body>
+</html>

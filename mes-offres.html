@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mes accompagnements RENAISSANCE : 3 mois pour reprendre la main, 6 mois pour transformer durablement. Coaching femmes 40+.">
+<title>Mes accompagnements · Valérie · RENAISSANCE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --or:         #b8956a;
+    --or-fonce:   #8a6b4a;
+    --or-pale:    #c8b59a;
+    --brun:       #3d2f22;
+    --texte:      #5a4f47;
+    --fond-haut:  #f3ece1;
+    --fond-bas:   #e9dfcf;
+    --serif:      'Playfair Display', Georgia, serif;
+    --sans:       'Lato', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  body {
+    background: linear-gradient(175deg, var(--fond-haut) 0%, var(--fond-bas) 100%);
+    background-color: var(--fond-haut);
+    min-height: 100vh;
+    font-family: var(--sans);
+    color: var(--texte);
+    padding: 28px 20px 56px;
+  }
+
+  .page {
+    max-width: 460px;
+    margin: 0 auto;
+    animation: fadeUp 0.7s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .retour {
+    display: inline-block;
+    font-family: var(--sans); font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--or-fonce); text-decoration: none; opacity: 0.8;
+    margin-bottom: 28px;
+    transition: opacity 0.2s;
+  }
+  .retour:hover { opacity: 1; }
+
+  /* ===== En-tête ===== */
+  .entete { text-align: center; margin-bottom: 30px; }
+  .marque { font-family: var(--serif); font-style: italic; font-size: 27px; color: var(--or-fonce); letter-spacing: 1px; }
+  .coach { font-family: var(--sans); font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--or); margin-top: 8px; }
+  .filet { width: 55px; height: 1px; background: var(--or); margin: 22px auto 0; }
+
+  h1 {
+    font-family: var(--serif); font-style: italic; font-weight: 700;
+    font-size: clamp(28px, 8.5vw, 36px); line-height: 1.2;
+    color: var(--brun); text-align: center;
+    margin-bottom: 18px;
+  }
+
+  /* ===== Texte ===== */
+  p { font-size: 15.5px; font-weight: 300; line-height: 1.68; margin-bottom: 13px; }
+  strong { font-weight: 700; color: var(--or-fonce); }
+  .intro { font-size: 16.5px; text-align: center; margin-bottom: 36px; }
+  .italique { font-style: italic; }
+
+  /* ===== Cartes d'offre ===== */
+  .offre {
+    padding: 32px 28px 22px;
+    border-radius: 14px;
+    margin-bottom: 26px;
+  }
+  .offre-simple {
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(184, 149, 106, 0.3);
+  }
+  .offre-phare {
+    background: rgba(184, 149, 106, 0.12);
+    border: 1px solid var(--or);
+  }
+  .badge {
+    display: inline-block;
+    background: var(--or); color: #ffffff;
+    font-family: var(--sans); font-size: 11px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    padding: 6px 12px; border-radius: 20px;
+    margin-bottom: 16px;
+  }
+  .offre-nom {
+    font-family: var(--serif); font-weight: 400;
+    font-size: 25px; line-height: 1.25; color: var(--or-fonce);
+  }
+  .offre-duree {
+    font-family: var(--serif); font-style: italic;
+    font-size: 17px; color: var(--texte); margin-top: 6px;
+  }
+  .offre-duree::after {
+    content: ''; display: block;
+    width: 30px; height: 1px; background: var(--or-pale);
+    margin: 18px 0 22px;
+  }
+
+  .liste { list-style: none; margin: 18px 0 16px; }
+  .liste li {
+    display: flex; align-items: baseline; gap: 12px;
+    padding: 0 0 0 4px; margin-bottom: 14px;
+    font-size: 15px; line-height: 1.5; color: var(--brun);
+  }
+  .etoile { color: var(--or); font-size: 14px; flex-shrink: 0; }
+
+  .separateur { text-align: center; color: var(--or); font-size: 15px; margin: 6px 0 30px; }
+
+  /* ===== Encadré paiement ===== */
+  .encadre-paiement {
+    padding: 30px 26px 26px;
+    border: 1px solid var(--or);
+    border-radius: 14px;
+    background: rgba(184, 149, 106, 0.10);
+    margin-bottom: 30px;
+  }
+  .encadre-paiement h2 {
+    font-family: var(--serif); font-style: italic; font-weight: 400;
+    font-size: 22px; line-height: 1.35; text-align: center;
+    color: var(--or-fonce);
+  }
+  .encadre-paiement h2::after {
+    content: ''; display: block;
+    width: 30px; height: 1px; background: var(--or);
+    margin: 12px auto 22px;
+  }
+  .encadre-paiement .liste li { font-weight: 300; color: var(--texte); font-size: 15.5px; }
+  .paiement-chute {
+    font-family: var(--serif); font-style: italic;
+    font-size: 16px; line-height: 1.5; text-align: center;
+    color: var(--brun); margin: 20px 0 0;
+  }
+
+  /* ===== Encadré contact ===== */
+  .encadre {
+    padding: 34px 28px 30px;
+    border: 1px solid var(--or);
+    border-radius: 14px;
+    background: rgba(121, 138, 91, 0.10);
+    text-align: center;
+  }
+  .encadre h2 {
+    font-family: var(--serif); font-style: italic; font-weight: 400;
+    font-size: 26px; line-height: 1.3; color: var(--brun); margin-bottom: 16px;
+  }
+  .encadre p { font-size: 16px; line-height: 1.65; }
+  .encadre .phrase-fin {
+    font-family: var(--serif); font-style: italic;
+    font-size: 17.5px; line-height: 1.45; color: var(--or-fonce);
+    margin: 16px 0 0;
+  }
+
+  /* ===== Signature ===== */
+  .signature { text-align: center; margin-top: 36px; }
+  .signature .nom { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--or-fonce); }
+  .signature .etoile-fin { color: var(--or); font-size: 17px; margin-top: 14px; }
+  .retour-bas { display: block; text-align: center; margin: 30px 0 0; }
+
+  @media (max-width: 380px) {
+    body { padding: 22px 16px 48px; }
+    .offre { padding: 26px 20px 18px; }
+    .encadre-paiement, .encadre { padding: 26px 20px 22px; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <a href="/" class="retour">← Retour</a>
+
+  <header class="entete">
+    <div class="marque">Renaissance</div>
+    <div class="coach">Coach Valérie Defolie</div>
+    <div class="filet"></div>
+  </header>
+
+  <h1>Mes accompagnements</h1>
+
+  <p class="intro">Deux façons de vivre ta transformation, selon le temps que tu veux te donner. Une seule promesse&nbsp;: une méthode pensée pour ton corps de femme 40+, un vrai suivi humain, jamais un programme générique.</p>
+
+  <!-- ===== Offre 3 mois ===== -->
+  <section class="offre offre-simple">
+    <h2 class="offre-nom">Renaissance</h2>
+    <div class="offre-duree">Reprendre la main — 3 mois</div>
+
+    <p>Pour la femme qui veut <strong>arrêter de se battre seule</strong> et avoir enfin une méthode qui prend en compte ses hormones, sa fatigue, sa réalité de vie.</p>
+    <p>Un programme structuré en 3 phases — Adaptation, Stabilisation, Intensification&nbsp;:</p>
+
+    <ul class="liste">
+      <li><span class="etoile">✦</span><span><b>5 séances par semaine</b> de 30 min, que tu fais selon ton énergie</span></li>
+      <li><span class="etoile">✦</span><span>Tes ressources alimentation, mindset, gestion du stress, sommeil et équilibre hormonal, qui évoluent au fil de ta progression</span></li>
+      <li><span class="etoile">✦</span><span>Ton bilan énergie chaque vendredi, que je lis pour adapter tes objectifs de la semaine suivante</span></li>
+      <li><span class="etoile">✦</span><span>Ton compte-rendu personnalisé en fin de chaque semaine</span></li>
+      <li><span class="etoile">✦</span><span>Ton suivi alimentaire dans l'app, que j'ajuste chaque semaine avec toi</span></li>
+      <li><span class="etoile">✦</span><span>Moi, joignable sur WhatsApp à tout moment</span></li>
+    </ul>
+
+    <p>Et surtout&nbsp;: <strong>ta propre application</strong>, que j'ai créée et dans laquelle je t'inscris. Intuitive et soignée, elle te prend par la main de A à Z&nbsp;: tout t'y est expliqué, avec une mine d'informations et de guides faciles à lire et à trouver. Tes <strong>séances-tests y sont programmées</strong> pour suivre ton évolution noir sur blanc, et je t'y accompagne à 100 %&nbsp;: tu n'as jamais à te demander quoi faire, ni quand.</p>
+    <p>Pour tes <strong>mensurations</strong>, tu restes autonome&nbsp;: l'application t'envoie un rappel aux semaines clés de ton parcours. On contrôle ainsi ton cheminement ensemble — et si tu stagnes, pour une raison personnelle ou hormonale, <strong>j'ajuste avec toi pour redresser la barre</strong>.</p>
+    <p>Entre ton suivi d'énergie, de sport et d'alimentation, l'application devient <strong>la photo complète de ta semaine</strong>. C'est elle qui me permet de voir juste, de comprendre ce qui se joue vraiment pour toi, et d'ajuster au plus près de ta réalité.</p>
+    <p>Tu y notes aussi tes repas. Chaque fin de semaine, je te fais un retour personnalisé&nbsp;: ce qui va, ce qui est à réajuster — toujours avec <strong>bienveillance</strong>, et toujours en t'expliquant <strong>pourquoi</strong>. Parce que mon but n'est pas que tu dépendes de moi, mais que tu deviennes <strong>autonome</strong> à la fin de ton accompagnement.</p>
+    <p class="italique">Ce n'est pas un programme en kit. C'est moi qui te suis, semaine après semaine.</p>
+  </section>
+
+  <!-- ===== Offre 6 mois ===== -->
+  <section class="offre offre-phare">
+    <span class="badge">Le plus choisi</span>
+    <h2 class="offre-nom">Renaissance + Rayonnement</h2>
+    <div class="offre-duree">Transformer durablement — 6 mois</div>
+
+    <p>Honnêtement, c'est l'accompagnement que je recommande à la majorité de mes clientes — et pas pour des raisons commerciales.</p>
+    <p>12 semaines, c'est le temps de poser les bases. Mais la vraie transformation — celle qui tient quand tu pars en vacances, qu'il y a un coup de stress, que la vie reprend son rythme — <strong>se construit sur 6 mois.</strong></p>
+    <p>Trois nouvelles phases — Affirmation, Expansion, Maîtrise — où l'on installe les acquis pour de bon. Tu <strong>conserves absolument tout ce qui fait Renaissance</strong>&nbsp;: tes 5 séances par semaine, ton application et ses ressources, ton bilan énergie du vendredi, ton suivi alimentaire ajusté, ton compte-rendu en fin de chaque semaine, tes rappels de mensurations, et moi joignable sur WhatsApp à tout moment.</p>
+    <p class="italique">Rien ne s'arrête, tout se prolonge et s'approfondit. C'est la suite logique de Renaissance&nbsp;: 3 mois pour poser les bases, 6 mois pour que ça tienne vraiment — même quand la vie reprend son rythme.</p>
+  </section>
+
+  <div class="separateur">✦</div>
+
+  <!-- ===== Paiement ===== -->
+  <section class="encadre-paiement">
+    <h2>Paiement serein, sans mauvaise surprise</h2>
+    <ul class="liste">
+      <li><span class="etoile">✦</span><span>Règlement 100 % sécurisé via <strong>PayPal</strong>, la référence mondiale du paiement protégé</span></li>
+      <li><span class="etoile">✦</span><span><strong>Garantie de remboursement</strong> PayPal — tu es protégée à chaque étape</span></li>
+      <li><span class="etoile">✦</span><span><strong>Paiement en 4 fois sans frais</strong>, pour avancer à ton rythme, sans peser sur ton budget</span></li>
+    </ul>
+    <p class="paiement-chute">Je veux que tu dises oui à ta transformation — pas que tu renonces pour une question de trésorerie.</p>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section class="encadre">
+    <h2>Quel accompagnement pour toi&nbsp;?</h2>
+    <p>Tu hésites&nbsp;? C'est normal. Le bon choix dépend de toi, de ton rythme et de ton moment de vie.</p>
+    <p>Contacte-moi en privé pour un appel découverte de 20 minutes, sans engagement. On verra ensemble où tu en es et quel accompagnement te correspond vraiment.</p>
+    <p class="phrase-fin">Ta renaissance commence par une conversation.</p>
+  </section>
+
+  <div class="signature">
+    <div class="nom">Valérie</div>
+    <div class="etoile-fin">✦</div>
+  </div>
+
+  <a href="/" class="retour retour-bas">← Retour</a>
+
+</main>
+</body>
+</html>
